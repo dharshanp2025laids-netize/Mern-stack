@@ -1,26 +1,30 @@
-import { useState } from "react";
-import { Route } from "react-router-dom";
-import Login from "./assets/pages/login";
-import Project from "./assets/pages/project";
-import TaskS from "./assets/pages/tasks";
+
+import {BrowserRouter,Routes,Route} from "react-router-dom";
+import Login from './pages/login'
+import Project from './pages/project'
+import Tasks from './pages/tasks'
+import Team from "./pages/team";
+import Setting from "./pages/setting";
+import Dashboard from "./pages/dashboard";
+import Calendar from "./pages/calendar";
+import Client from "./pages/clients";
 
 function App() {
-  const[email, setEmail]=useState("")
-  const[pass, setPass]=useState("")
-  const handlesubmit = (e) => {
-    e.preventDefault();
-    console.log("printing inside the print function")
-    console.log(email,pass)
-  };
+ 
   return (
      <>
-    <Browserrouter>
+    <BrowserRouter>
     <Routes>
     <Route path = "/login" element = {<Login/>}/>
     <Route path = "/project" element = {<Project/>}/>
-    <Route path = "/ tasks" element ={<TaskS/>}/>
+    <Route path = "/tasks" element= {<Tasks/>}/>
+    <Route path = "/team" element= {<Team/>}/>
+    <Route path = "/setting" element= {<Setting/>}/>
+    <Route path = "/calendar" element= {<Calendar/>}/>
+    <Route path = "/client" element= {<Client/>}/>
+    <Route path = "/dashboard" element= {<Dashboard/>}/>
     </Routes>
-    </Browserrouter>
+    </BrowserRouter>
     </>
   )
 }
