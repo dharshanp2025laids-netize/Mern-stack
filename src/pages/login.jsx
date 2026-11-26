@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
    const[formdata,setFormdata]=useState({
     username:"",
     password:""
@@ -11,12 +12,12 @@ function Login() {
     ...formdata,
     [e.target.name]:e.target.value
   })}
-  const[username, setUsername]=useState("")
-  const[password, setPassword]=useState("")
+
   const handlesubmit = (e) => {
     e.preventDefault();
-    console.log(formdata)
-    Navigate("/dashboard")
+    console.log("login page",formdata)
+    alert("login sucessfull")
+    navigate("/dashboard",{state:formdata})
     
   };
   return ( 
