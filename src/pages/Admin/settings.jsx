@@ -1,7 +1,7 @@
-function AdminSetting() {
+function AdminSettings() {
     return ( 
-        <div>Admin Setting</div>
+        <div>Admin Settings</div>
      );
 }
 
-export default AdminSetting;
+export default AdminSettings;

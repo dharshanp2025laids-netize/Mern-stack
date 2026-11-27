@@ -7,7 +7,7 @@ function Admin() {
             <nav>
                 <Link to={"/admin/dashboard"}>Dashboard</Link>
                 <Link to={"/admin/userdetails"}>user details</Link>
-                <Link to={"/admin/setting"}>setting</Link>
+                <Link to={"/admin/settings"}>settings</Link>
             </nav>
             <Outlet/>
         </div>

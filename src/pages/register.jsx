@@ -15,16 +15,27 @@ function Register() {
     navigate("/login",{state:data});
 }
     return (
-    <form onSubmit={handleSubmit(onsubmit1)}>
-      <input type='text' required placeholder="Enter your username" name="username"{...register("name")}/>
-      <p>{errors.name?.message}</p>
-      <input type='text' required placeholder="Enter your email" name="email"{...register("email")}/>
-      <p>{errors.email?.message}</p>
-      <input type='text' required placeholder="Enter your password" name="passsword"{...register("password")}/>
-      <p>{errors.password?.message}</p>
-      <input type='text' required placeholder="Enter your age" name="age"{...register("age")}/>
-      <p>{errors.age?.message}</p>
-      <><button type="submit">submit</button></>
+    <form onSubmit={handleSubmit(onsubmit1)} 
+    className="bg-black mx-auto mt-16 flex w-full max-w-md flex-col rounded-xl bg-gray-800 p-8 shadow-lg" > 
+      <input type='text' required placeholder="Enter your username" name="username"{...register("name")}
+         className="bg-white mx-auto mt-16 flex w-full max-w-md flex-col rounded-xl bg-gray-600 p-8 shadow-lg">
+    </input>
+      <p className="mb-1 mt-2 min-h-[1.10rem] text-xs text-red-500">{errors.name?.message}</p>
+      <input type='text' required placeholder="Enter your email" name="email"{...register("email")}
+            className="bg-white mx-auto mt-16 flex w-full max-w-md flex-col rounded-xl bg-gray-600 p-8 shadow-lg">
+        </input>
+      <p className="mb-5 mt-2 min-h-[1.10rem] text-xs text-red-500">{errors.email?.message}</p>
+      <input type='text' required placeholder="Enter your password" name="passsword"{...register("password")}
+            className="bg-white mx-auto mt-16 flex w-full max-w-md flex-col rounded-xl bg-gray-600 p-8 shadow-lg">
+        </input>
+      <p className="mb-5 mt-2 min-h-[1.10rem] text-xs text-red-500">{errors.password?.message}</p>
+      <input type='text' required placeholder="Enter your age" name="age"{...register("age")}
+      className="bg-white mx-auto mt-16 flex w-full max-w-md flex-col rounded-xl bg-gray-600 p-8 shadow-lg">
+        </input>
+      <p className="mb-5 mt-2 min-h-[1.10rem] text-xs text-red-500">{errors.age?.message}</p>
+      <><button type="submit"
+         className="mt-1 rounded-lg bg-white-500 py-3 font-bold text-white transition hover:bg-black-600 active:scale-95q"
+      >submit</button></>
     </form>
  )
 }
