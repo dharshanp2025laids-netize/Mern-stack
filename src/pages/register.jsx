@@ -9,27 +9,27 @@ function Register() {
         resolver: zodResolver(registerschema)
     });
 
-   function onsubmit1(data) {
+   function onsubmit(data) {
     console.log(data);
     alert("Register success");
     navigate("/login",{state:data});
-}
+} 
     return (
-    <form onSubmit={handleSubmit(onsubmit1)} 
+    <form onSubmit={handleSubmit(onsubmit)} 
     className="bg-black mx-auto mt-16 flex w-full max-w-md flex-col rounded-xl bg-gray-800 p-8 shadow-lg" > 
       <input type='text' required placeholder="Enter your username" name="username"{...register("name")}
          className="bg-white mx-auto mt-16 flex w-full max-w-md flex-col rounded-xl bg-gray-600 p-8 shadow-lg">
     </input>
       <p className="mb-1 mt-2 min-h-[1.10rem] text-xs text-red-500">{errors.name?.message}</p>
-      <input type='text' required placeholder="Enter your email" name="email"{...register("email")}
+      <input type='email' required placeholder="Enter your email" name="email"{...register("email")}
             className="bg-white mx-auto mt-16 flex w-full max-w-md flex-col rounded-xl bg-gray-600 p-8 shadow-lg">
         </input>
       <p className="mb-5 mt-2 min-h-[1.10rem] text-xs text-red-500">{errors.email?.message}</p>
-      <input type='text' required placeholder="Enter your password" name="passsword"{...register("password")}
+      <input type='password' required placeholder="Enter your password" name="passsword"{...register("password")}
             className="bg-white mx-auto mt-16 flex w-full max-w-md flex-col rounded-xl bg-gray-600 p-8 shadow-lg">
         </input>
       <p className="mb-5 mt-2 min-h-[1.10rem] text-xs text-red-500">{errors.password?.message}</p>
-      <input type='text' required placeholder="Enter your age" name="age"{...register("age")}
+      <input type='number' required placeholder="Enter your age" name="age"{...register("age")}
       className="bg-white mx-auto mt-16 flex w-full max-w-md flex-col rounded-xl bg-gray-600 p-8 shadow-lg">
         </input>
       <p className="mb-5 mt-2 min-h-[1.10rem] text-xs text-red-500">{errors.age?.message}</p>

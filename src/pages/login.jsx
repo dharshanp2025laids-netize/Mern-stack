@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { registerschema } from "../component/component formschema/registerschema";
+
 
 function Login() {
   const navigate = useNavigate();
@@ -17,11 +17,11 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const registerdata = location.state;
+    const registerdata = location.state || {};
     console.log("login page",logindata)
     if (logindata.username === registerdata.name && logindata.password === registerdata.password){
-      console.log("if success")
-      navigate("/dashboard")
+      console.log("if success",logindata)
+      navigate("/dashboard",{state:logindata});
     } else {
       console.log("Credentialerrror")
   }}
